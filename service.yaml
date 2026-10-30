@@ -1,0 +1,13 @@
+# APP 1 SERVICE
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: wil-playground
+spec:
+  type: LoadBalancer  # ClusterIP | NodePort | LoadBalancer
+  selector:
+    app: wil-playground       # Must match Pod labels
+  ports:
+    - port: 8888       # Exposed port
+      targetPort: 8888  # Container port
